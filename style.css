@@ -1,0 +1,22 @@
+body{
+    font-family: fantasy;
+    background: linear-gradient(#2980b9, #663399);
+    height: 100vh;
+}
+
+#console{
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+
+    max-width: 700px;
+    height: 200px;
+
+    font-size: 50px;
+    line-height: 200px;
+
+    border: 1px solid white;
+    border-radius: 12px;
+    
+    color: white;
+}
