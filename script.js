@@ -87,13 +87,31 @@ bikes.forEach((bike, i) => {
     weight < lighterBike.weight ? lighterBike = bike : null
 })
 const { brandName, weight} = lighterBike
-console.log(`La bici più leggera è la bici: '${brandName}' con peso: ${weight}`)
-
+let mess = console.log(`La bici più leggera è la bici: '${brandName}' con peso: ${weight}`)
 // Snack 4
+
+// Funzione che genera numeri random
+const rndGenerator = () => Math.floor(Math.random() * 99 ) + 1
 
 // Creo array di oggetti ( squadre da calcio )
 const footballTeams = [
-    {
-
-    }
+        { name: 'Juventus', puntiFatti: 0, falliSubiti: 0 } ,
+        { name: 'Inter', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Milan', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Napoli', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Roma', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Fiorentina', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Lazio', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Empoli', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Cagliari', puntiFatti: 0, falliSubiti: 0 },
+        { name: 'Bra', puntiFatti: 0, falliSubiti: 0 }
 ]
+console.table(footballTeams)
+
+// Richiamo funzione che gernera numeri ramndom da mettere nella prprietà 
+footballTeams.forEach(team => {
+    team.puntiFatti = rndGenerator(),
+    team.falliSubiti = rndGenerator()
+});
+console.table(footballTeams)
+
