@@ -19,11 +19,13 @@
 
 // Funzione per mostrare i res nel dom
 const container = document.getElementById('console')
-function Dom(res, title) {
+
 let h1 = document.createElement('h1')
+
+function Dom(res, title, string) {
 h1.innerHTML = title
-container.classList.add('d-flex')
 container.parentNode.insertBefore(h1, container);
+
 res.forEach(res => {
     const card = document.createElement('div')
     card.classList.add('card')
@@ -48,7 +50,7 @@ const guest = guessList.map((guestName, index) => ({
 ));
 
 console.table(guest)
-const title = 'SNACK 1'
+const title = 'SNACK'
 Dom(guest, title)
 
 // Snack 2 
@@ -126,9 +128,19 @@ const footballTeams = [
 console.table(footballTeams)
 
 // Richiamo funzione che gernera numeri ramndom da mettere nella prprietà 
+let string
 footballTeams.forEach(team => {
     team.puntiFatti = rndGenerator(),
     team.falliSubiti = rndGenerator()
+
+    string = document.createElement('div')
+    string.classList.add('card')
+    string.style.borderColor = ('blue')
+
+    string.innerHTML = `Nome squadra: ${team.name}, Punti fatti: ${team.puntiFatti}, Falli subiti: ${team.falliSubiti}`
+    container.appendChild(string)
 });
+
 console.table(footballTeams)
+
 
