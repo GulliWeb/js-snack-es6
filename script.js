@@ -59,6 +59,8 @@ console.table(student70)
 console.log('NOMI STUDENTI CON VOTI > 70')
 
 // Creo la lista dei soli studenti che hanno voti > 70 e ID > 120
-const student120 = student.filter(s => s.grades > 70 && s.ID > 120)
+const student120 = student70.filter(s => s.ID > 120)
 console.table(student120)
 console.log('NOMI STUDENTI CON VOTI > 70 E ID > 120')
+
+// Snack 3
