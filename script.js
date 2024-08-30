@@ -1,67 +1,84 @@
-// // // Snack 1
+// Snack 1
 
-// // // Creo la lista degli invitati
-// // const tableName = 'Tavolo vip'
-// // const guessList = [
-// //     'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 
-// //     'Chiara Ferragni', 'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello'
-// // ]
-
-// // guessList.forEach((guess, i ) => {
-// //     // Creo OGGETTI guest ed assegno le relative proprietà
-// //         guess = {
-// //         tableName : tableName,
-// //         guessName : guess,
-// //         place : i
-// //     }
-// //     console.table(guess)
-// // });
-
-// // Snack 1 con metotdo.map()
-// // Creo la lista degli invitati
-// let consol = document.getElementById('console')
+// Creo la lista degli invitati
 // const tableName = 'Tavolo vip'
 // const guessList = [
 //     'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 
 //     'Chiara Ferragni', 'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello'
 // ]
 
-// const guest = guessList.map((guestName, index) => ({
-//         tableName,
-//         guestName,
-//         place : index
+// guessList.forEach((guess, i ) => {
+//     // Creo OGGETTI guest ed assegno le relative proprietà
+//         guess = {
+//         tableName : tableName,
+//         guessName : guess,
+//         place : i
 //     }
-// ));
-// console.table(guest)
+//     console.table(guess)
+// });
 
+// Funzione per mostrare i res nel dom
+const container = document.getElementById('console')
+function Dom(res, title) {
+let h1 = document.createElement('h1')
+h1.innerHTML = title
+container.classList.add('d-flex')
+container.parentNode.insertBefore(h1, container);
+res.forEach(res => {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerText = `Tavolo: ${res.tableName}, Nome: ${res.guestName}, Posto: ${res.place}`
+    container.appendChild(card)
+})
+}
+// Snack 1 con metotdo.map()
+// Creo la lista degli invitati
+let consol = document.getElementById('console')
+const tableName = 'Tavolo vip'
+const guessList = [
+    'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 
+    'Chiara Ferragni', 'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello'
+]
 
-// // Snack 2 
+const guest = guessList.map((guestName, index) => ({
+        tableName,
+        guestName,
+        place : index
+    }
+));
 
-// // Preparo l'elenco degli studenti
-// const student = [
-//     { ID: 213, name: 'Marco della Rovere', grades: 78 },
-//     { ID: 110, name: 'Paola Cortellessa', grades: 96 },
-//     { ID: 250, name: 'Andrea Mantegna', grades: 48 },
-//     { ID: 145, name: 'Gaia Borromini', grades: 74 },
-//     { ID: 196, name: 'Luigi Grimaldello', grades: 68 },
-//     { ID: 102, name: 'Piero della Francesca', grades: 50 },
-//     { ID: 120, name: 'Francesca da Polenta', grades: 84 }
-// ];
+console.table(guest)
+const title = 'SNACK 1'
+Dom(guest, title)
 
-// // Trasformo i nomi in MAIUSCOLO
-// const studentUpperCase = student.map(s => s.name.toUpperCase());
-// console.table(studentUpperCase)
-// console.log('NOMI STUDENTI IN MAIUSCOLO')
+// Snack 2 
 
-// // Creo la lista dei soli studenti che hanno voti > 70
-// const student70 = student.filter(s => s.grades > 70)
-// console.table(student70)
-// console.log('NOMI STUDENTI CON VOTI > 70')
+// Preparo l'elenco degli studenti
+const student = [
+    { ID: 213, name: 'Marco della Rovere', grades: 78 },
+    { ID: 110, name: 'Paola Cortellessa', grades: 96 },
+    { ID: 250, name: 'Andrea Mantegna', grades: 48 },
+    { ID: 145, name: 'Gaia Borromini', grades: 74 },
+    { ID: 196, name: 'Luigi Grimaldello', grades: 68 },
+    { ID: 102, name: 'Piero della Francesca', grades: 50 },
+    { ID: 120, name: 'Francesca da Polenta', grades: 84 }
+];
 
-// // Creo la lista dei soli studenti che hanno voti > 70 e ID > 120
-// const student120 = student70.filter(s => s.ID > 120)
-// console.table(student120)
-// console.log('NOMI STUDENTI CON VOTI > 70 E ID > 120')
+// Trasformo i nomi in MAIUSCOLO
+const studentUpperCase = student.map(s => s.name.toUpperCase());
+console.table(studentUpperCase)
+console.log('NOMI STUDENTI IN MAIUSCOLO')
+
+// Creo la lista dei soli studenti che hanno voti > 70
+const student70 = student.filter(s => s.grades > 70)
+console.table(student70)
+console.log('NOMI STUDENTI CON VOTI > 70')
+
+// Creo la lista dei soli studenti che hanno voti > 70 e ID > 120
+const student120 = student70.filter(s => s.ID > 120)
+console.table(student120)
+console.log('NOMI STUDENTI CON VOTI > 70 E ID > 120')
+
 
 // Snack 3 
 
